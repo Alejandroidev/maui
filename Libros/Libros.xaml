@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Libros">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="books.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="Libros!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Gestion de libros"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <!-- Nuevos campos de texto -->
+            <Label Text="Título" FontSize="Medium" />
+            <Entry x:Name="tituloEntry" Placeholder="Ingrese el título" />
+
+            <Label Text="Autor" FontSize="Medium" />
+            <Entry x:Name="autorEntry" Placeholder="Ingrese el autor" />
+
+            <Label Text="ISBN" FontSize="Medium" />
+            <Entry x:Name="isbnEntry" Placeholder="Ingrese el ISBN" />
+
+            <Label Text="Cantidad de Copias" FontSize="Medium" />
+            <Entry x:Name="cantidadDeCopiasEntry" Placeholder="Ingrese la cantidad" Keyboard="Numeric" />
+
+            <Button
+                x:Name="SaveBookBtn"
+                Text="Guardar Libro" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="AddBook"
+                HorizontalOptions="Fill" />
+            
+            <Button
+                x:Name="CounterBtn"
+                Text="Go to Home" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="Home"
+                HorizontalOptions="Fill" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Biblioteca">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="library2.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="Biblioteca admin!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Gestion de biblioteca"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <!-- Botones para consultar usuarios y libros -->
+            <Button
+                x:Name="ConsultarUsuariosBtn"
+                Text="Consultar Usuarios"
+                Clicked="ConsultarUsuarios"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="ConsultarLibrosBtn"
+                Text="Consultar Libros"
+                Clicked="ConsultarLibros"
+                HorizontalOptions="Fill" />
+
+
+            <!-- Lista para mostrar usuarios -->
+            <Label Text="Lista de Usuarios:" FontSize="Medium" />
+            <CollectionView x:Name="UsuariosCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Nombre}" FontSize="Small" />
+                            <Label Text="{Binding Id}" FontSize="Small" />
+                            <Label Text="{Binding LibrosPrestados}" FontSize="Small" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Lista para mostrar libros -->
+            <Label Text="Lista de Libros:" FontSize="Medium" />
+            <CollectionView x:Name="LibrosCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Titulo}" FontSize="Small" />
+                            <Label Text="{Binding Autor}" FontSize="Small" />
+                            <Label Text="{Binding ISBN}" FontSize="Small" />
+                            <Label Text="{Binding CantidadDeCopias}" FontSize="Small" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Id Usurio" FontSize="Medium" />
+            <Entry x:Name="UsurioEntry" Placeholder="Ingrese el id Usuario" />
+
+            <Label Text="ISBN" FontSize="Medium" />
+            <Entry x:Name="ISBNEntry" Placeholder="Ingrese el ISBN del libro" />
+
+            <Button
+                x:Name="Prestar"
+                Text="Prestar" 
+                Clicked="PrestarClic"
+                HorizontalOptions="Fill" />
+            
+            <Button
+                x:Name="Retornar"
+                Text="Retornar" 
+                Clicked="RetornarClic"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Go to Home" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="Home"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
